@@ -32,6 +32,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        // Main security configuration mapping
         http
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf(AbstractHttpConfigurer::disable)
@@ -46,8 +47,10 @@ public class SecurityConfig {
                         .requestMatchers("/api/user/**").hasAnyRole("ADMIN", "USER")
                         .anyRequest().authenticated()
                 )
+                // We use stateless sessions because of JWT
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
+                // Add our custom JWT filter before standard login filter
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();

@@ -19,6 +19,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return savedUser ? JSON.parse(savedUser) : null;
   });
 
+  // Effect to check token expiration periodically or on mount
   useEffect(() => {
     if (token) {
       try {
@@ -34,6 +35,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [token]);
 
   const login = (newToken: string, newUser: User) => {
+    // Save everything to localStorage so it persists on refresh
     localStorage.setItem('token', newToken);
     localStorage.setItem('user', JSON.stringify(newUser));
     setToken(newToken);

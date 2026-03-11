@@ -15,15 +15,18 @@ function App() {
         <BrowserRouter>
           <div className="min-h-screen bg-gray-50 flex flex-col">
             <Routes>
+              {/* Public Routes */}
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               
+              {/* Private Routes (only for logged in users) */}
               <Route path="/dashboard" element={
                 <ProtectedRoute>
                   <Dashboard />
                 </ProtectedRoute>
               } />
               
+              {/* Default redirects */}
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
               <Route path="*" element={<Navigate to="/dashboard" replace />} />
             </Routes>

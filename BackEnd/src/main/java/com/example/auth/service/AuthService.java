@@ -29,15 +29,18 @@ public class AuthService {
         this.userMapper = userMapper;
     }
 
+    // Method to handle user registration
     public AuthResponse register(RegisterRequest request) {
         if (repository.existsByEmail(request.getEmail())) {
             throw new RuntimeException("Email already in use");
         }
         
+        // Map request to User entity and encode password before saving
         User user = userMapper.toUser(request);
         user.setPassword(passwordEncoder.encode(request.getPassword()));
                 
         repository.save(user);
+        // Generate JWT token for the new user
         var jwtToken = jwtService.generateToken(user);
         
         AuthResponse response = userMapper.toAuthResponse(user);
@@ -46,6 +49,7 @@ public class AuthService {
         return response;
     }
 
+    // Method to handle user login
     public AuthResponse login(LoginRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(

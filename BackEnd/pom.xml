@@ -121,6 +121,7 @@
                         </path>
                     </annotationProcessorPaths>
                     <compilerArgs>
+                        <!-- These arguments are needed to open internal compiler packages for Java 25 compatibility -->
                         <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
                         <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
                         <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>

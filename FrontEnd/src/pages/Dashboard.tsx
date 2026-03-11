@@ -8,6 +8,7 @@ export default function Dashboard() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
+  // Function to handle logout and redirect to login page
   const handleLogout = () => {
     logout();
     navigate('/login');
@@ -19,7 +20,7 @@ export default function Dashboard() {
       const res = await api.get('/user');
       return res.data;
     },
-    // Both ADMIN and USER can see this
+    // Both ADMIN and USER can see this content
   });
 
   // Only run if user is ADMIN
@@ -29,6 +30,7 @@ export default function Dashboard() {
       const res = await api.get('/admin');
       return res.data;
     },
+    // This query only runs if the user is an ADMIN
     enabled: user?.role === 'ADMIN',
   });
 

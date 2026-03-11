@@ -1,85 +1,70 @@
-# Full-Stack Authentication & RBAC System
+# Full-Stack Auth & RBAC Project
 
-A secure full-stack web application featuring JWT-based authentication and Role-Based Access Control (RBAC).
+This is a full-stack web application I built for my assignment. It implements JWT-based authentication and Role-Based Access Control (RBAC) using Spring Boot and React.
 
-## 🚀 Features
-- **Registration & Login**: Secure user onboarding with role assignment.
-- **Role-Based Access Control (RBAC)**: Distinct access levels for `USER` and `ADMIN`.
-- **JWT Authentication**: Stateless session management with secure token exchange.
-- **Bonus Features**: 
-  - Robust password validation (Regex-based).
-  - Loading spinners and skeleton states.
-  - Full responsive UI (Mobile/Desktop).
-  - Secure Logout functionality.
+## Features I Implemented
+- **User Registration & Login**: Users can sign up and choose between USER and ADMIN roles.
+- **Role-Based Access**: The app restricts access to certain pages and APIs based on the user's role.
+- **JWT Security**: I used JSON Web Tokens for secure, stateless authentication.
+- **Password Validation**: Added regex rules to make sure passwords are secure (must include uppercase, lowercase, numbers, and symbols).
+- **Responsive Design**: The UI works well on both mobile and desktop screens.
+- **UI Details**: Added loading spinners and skeleton loaders to improve the user experience.
 
-## 🛠 Tech Stack
-### Backend
-- **Java 17+** (Running on Java 25)
-- **Spring Boot 3**
-- **Spring Security & JWT**
-- **Spring Data JPA & Hibernate**
-- **H2 In-Memory Database**
-- **MapStruct & Maven**
-- **Swagger/OpenAPI**
+## Technologies Used
+### Backend (Spring Boot)
+- Java 17+
+- Spring Security + JWT
+- Spring Data JPA (H2 In-memory DB)
+- Maven
+- Swagger for API documentation
 
-### Frontend
-- **React 19 + TypeScript**
-- **Vite**
-- **React Router 7**
-- **TanStack Query (React Query)**
-- **Axios**
-- **React Hook Form**
-- **Tailwind CSS v4**
+### Frontend (React)
+- React 19 with TypeScript
+- Vite
+- Tailwind CSS
+- React Router & React Query
+- Axios for API calls
+- React Hook Form for validation
 
 ---
 
-## 🚦 Getting Started
+## How to Run the Project
 
-### 1. Prerequisites
-- **Node.js** (v18+)
-- **Java JDK** (17 or higher)
-- **Maven** (optional, wrapper included)
+### Prerequisite
+Make sure you have Node.js and Java JDK installed on your machine.
 
-### 2. Backend Setup
-1. Navigate to the `BackEnd` directory:
-   ```bash
-   cd BackEnd
-   ```
-2. Start the application using the Maven Wrapper:
+### Running the Backend
+1. Open a terminal and go into the `BackEnd` folder.
+2. Run the following command:
    ```bash
    .\mvnw.cmd spring-boot:run
    ```
-3. The server will start at `http://localhost:8080`.
-4. **Swagger UI**: Visit `http://localhost:8080/swagger-ui/index.html` to test APIs.
-5. **H2 Console**: Visit ` ` (JDBC URL: `jdbc:h2:mem:authdb`).
+3. The backend will start on port 8080.
+4. You can check the API documentation at: `http://localhost:8080/swagger-ui/index.html`.
+5. If you want to see the database, go to the H2 console at `http://localhost:8080/h2-console` (use `jdbc:h2:mem:authdb` as the JDBC URL).
 
-### 3. Frontend Setup
-1. Open a new terminal and navigate to the `FrontEnd` directory:
-   ```bash
-   cd FrontEnd
-   ```
-2. Install dependencies (if not already done):
+### Running the Frontend
+1. Open a new terminal and go into the `FrontEnd` folder.
+2. If you haven't yet, install the dependencies:
    ```bash
    npm install
    ```
-3. Start the development server:
+3. Start the app:
    ```bash
    npm run dev
    ```
-4. Open your browser at `http://localhost:5173`.
+4. The app will be available at `http://localhost:5173`.
 
 ---
 
-## 🔐 Access Rules
-| Endpoint | Access Level |
+## API Access Rules
+| Path | Who can access? |
 | :--- | :--- |
-| `/api/public/**` | Everyone (Public) |
-| `/api/user/**` | USER, ADMIN |
-| `/api/admin/**` | ADMIN Only |
+| `/api/public/**` | Everyone |
+| `/api/user/**` | Both Users and Admins |
+| `/api/admin/**` | Admins Only |
 
----
-
-## 📝 Credentials for Testing
-- You can register any account via the UI.
-- Select the **ADMIN** role during registration to access the Admin Content card in the Dashboard.
-- Passwords must be at least **8 characters** and include: Uppercase, Lowercase, Number, and Special Character.
+## Testing the App
+- You can register a new account and pick a role.
+- If you pick **ADMIN**, you'll see an extra card on the dashboard that normal users can't see.
+- Password requirements: At least 8 characters, must have uppercase, lowercase, a number, and a special character.
