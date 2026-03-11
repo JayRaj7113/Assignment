@@ -1,0 +1,16 @@
+C:\Users\Jay Raj\Desktop\Books-Coding\Assignment\BackEnd\src\main\java\com\example\auth\AuthApplication.java
+C:\Users\Jay Raj\Desktop\Books-Coding\Assignment\BackEnd\src\main\java\com\example\auth\config\ApplicationConfig.java
+C:\Users\Jay Raj\Desktop\Books-Coding\Assignment\BackEnd\src\main\java\com\example\auth\config\SecurityConfig.java
+C:\Users\Jay Raj\Desktop\Books-Coding\Assignment\BackEnd\src\main\java\com\example\auth\controller\AdminController.java
+C:\Users\Jay Raj\Desktop\Books-Coding\Assignment\BackEnd\src\main\java\com\example\auth\controller\AuthController.java
+C:\Users\Jay Raj\Desktop\Books-Coding\Assignment\BackEnd\src\main\java\com\example\auth\controller\UserController.java
+C:\Users\Jay Raj\Desktop\Books-Coding\Assignment\BackEnd\src\main\java\com\example\auth\dto\AuthResponse.java
+C:\Users\Jay Raj\Desktop\Books-Coding\Assignment\BackEnd\src\main\java\com\example\auth\dto\LoginRequest.java
+C:\Users\Jay Raj\Desktop\Books-Coding\Assignment\BackEnd\src\main\java\com\example\auth\dto\RegisterRequest.java
+C:\Users\Jay Raj\Desktop\Books-Coding\Assignment\BackEnd\src\main\java\com\example\auth\dto\UserMapper.java
+C:\Users\Jay Raj\Desktop\Books-Coding\Assignment\BackEnd\src\main\java\com\example\auth\entity\Role.java
+C:\Users\Jay Raj\Desktop\Books-Coding\Assignment\BackEnd\src\main\java\com\example\auth\entity\User.java
+C:\Users\Jay Raj\Desktop\Books-Coding\Assignment\BackEnd\src\main\java\com\example\auth\repository\UserRepository.java
+C:\Users\Jay Raj\Desktop\Books-Coding\Assignment\BackEnd\src\main\java\com\example\auth\security\JwtAuthenticationFilter.java
+C:\Users\Jay Raj\Desktop\Books-Coding\Assignment\BackEnd\src\main\java\com\example\auth\security\JwtService.java
+C:\Users\Jay Raj\Desktop\Books-Coding\Assignment\BackEnd\src\main\java\com\example\auth\service\AuthService.java
